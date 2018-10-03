@@ -5,12 +5,14 @@ const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const controllers = require("./controllers");
 const morgan = require("morgan");
+const cors = require('cors');
 
 const { errors } = require("celebrate");
 const {mongoUrl} = require('../lib/config');
 
 mongoose.connect(mongoUrl);
 const app = express();
+app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));

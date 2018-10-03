@@ -1,4 +1,4 @@
-const { logger } = require("../../lib/config");
+const { logger, approvalKey } = require("../../lib/config");
 const {fetchProjects} = require("../services/projects/fetchProjects");
 const createProject = require("../services/projects/createProject");
 const { APPROVED, AWAITING_APPROVAL } = require('../models/project');
@@ -28,6 +28,9 @@ const postProject = async (req, res) => {
 };
 
 const approveProject = async (req, res) => {
+  if(req.query.approvalKey !== approvalKey) {
+    res.status(403).send('Invalid approval key');
+  }
   try {
     const {id} = req.params;
     const project = await Project.findById(id);

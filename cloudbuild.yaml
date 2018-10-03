@@ -7,7 +7,7 @@ steps:
   - --plaintext-file=env
   - --location=global
   - --keyring=default
-  - --key=github-profile-summary-api
+  - --key=coderally-api
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install' ]
 - name: 'gcr.io/cloud-builders/npm'

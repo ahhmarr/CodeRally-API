@@ -7,6 +7,6 @@ steps:
   - --plaintext-file=env
   - --location=global
   - --keyring=default
-  - --key=github-profile-summary-api
+  - --key=coderally-api
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', 'app.yaml']

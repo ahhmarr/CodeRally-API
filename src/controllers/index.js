@@ -10,6 +10,12 @@ router.get(
   projectsController.getProjects
 );
 
+router.get(
+  "/projects/:name",
+  projectsValidator.getProjectByName,
+  projectsController.getProjectByName
+);
+
 router.post(
   "/projects",
   projectsValidator.postProject,

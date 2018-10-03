@@ -5,6 +5,11 @@ const getProjects = celebrate({
     name: Joi.string(),
   },
 });
+const getProjectByName = celebrate({
+  params: {
+    name: Joi.string().required(),
+  },
+});
 const postProject = celebrate({
   body: Joi.object().keys({
     name: Joi.string().required(),
@@ -16,4 +21,5 @@ const postProject = celebrate({
 });
 
 module.exports.getProjects = getProjects;
+module.exports.getProjectByName = getProjectByName;
 module.exports.postProject = postProject;

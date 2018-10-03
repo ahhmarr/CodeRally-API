@@ -1,5 +1,5 @@
 const { logger, approvalKey } = require("../../lib/config");
-const {fetchProjects} = require("../services/projects/fetchProjects");
+const {fetchProjects, fetchProject} = require("../services/projects/fetchProjects");
 const createProject = require("../services/projects/createProject");
 const { APPROVED, AWAITING_APPROVAL } = require('../models/project');
 const {sendApprovalEmail} = require('../services/projects/sendApprovalEmail');
@@ -11,6 +11,17 @@ const getProjects = async (req, res) => {
     res.status(200).send(projects);
   } catch (e) {
     logger.error('Failed to get projects', e);
+    res.status(500).send(e);
+  }
+};
+
+const getProjectByName = async (req, res) => {
+  try {
+    const { name } = req.params;
+    const project = await fetchProject({ name });
+    res.status(200).send(project);
+  } catch (e) {
+    logger.error('Failed to get project', e);
     res.status(500).send(e);
   }
 };
@@ -44,5 +55,6 @@ const approveProject = async (req, res) => {
 };
 
 module.exports.getProjects = getProjects;
+module.exports.getProjectByName = getProjectByName;
 module.exports.postProject = postProject;
 module.exports.approveProject = approveProject;

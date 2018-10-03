@@ -3,4 +3,4 @@ gcloud kms encrypt \
   --ciphertext-file=env.enc \
   --location=global \
   --keyring=default \
-  --key=github-profile-summary-api
+  --key=coderally-api

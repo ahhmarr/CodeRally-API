@@ -8,9 +8,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const { errors } = require('celebrate');
-const { mongoUrl, isTest } = require('../lib/config');
+const { mongoUrl } = require('../lib/config');
 
-if (!isTest) mongoose.connect(mongoUrl);
+mongoose.connect(mongoUrl);
 const app = express();
 app.use(cors());
 app.use(helmet());

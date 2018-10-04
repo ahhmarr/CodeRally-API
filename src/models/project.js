@@ -7,6 +7,7 @@ const APPROVED = "APPROVED";
 const projectSchema = new Schema({
   name: String,
   link: String,
+  repoLink: String,
   tech: String,
   partners: String,
   description: String,

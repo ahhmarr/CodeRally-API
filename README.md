@@ -1,11 +1,13 @@
 ![coderally Logo](./docs/logo.png)
 
+Frontend hosted at https://coderally.co/
+
 # CodeRally Backend
 
 A project listing board for app and web developers
-Powered by [https://nodejs.org/](NodeJS), [http://expressjs.com/](Express), and [https://github.com/hapijs/joi](Joi).
+Powered by [NodeJS](https://nodejs.org/), [Express](http://expressjs.com/), and [Joi](https://github.com/hapijs/joi).
 
-Hosted at on [Google App Engine](https://cloud.google.com/appengine/).
+Hosted on [Google App Engine](https://cloud.google.com/appengine/).
 
 Frontend React app for this project is located here: https://github.com/TheWillG/CodeRally.git.
 
@@ -33,6 +35,9 @@ Tests are located at *\_\_tests__*
 |------|-------------|--------|
 | PORT | Port the app is run on. | 3000 |
 | LOGGER_LEVEL | Logger level configuration used by `log4js` package | info |
+| MONGO_URL | MongoDB URL | xxxx |
+| APPROVAL_URL | URL for project approval process | xxxx |
+| APPROVAL_KEY | Key for approvals endpoint | xxx |
 
 The environment variables are encrypted from *env* to *env.enc*.
 

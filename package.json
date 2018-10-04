@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "node_modules/.bin/nodemon npm run start",
-    "start": "node index.js"
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=test jest --forceExit",
+    "lint-fix": "prettier --write src/**/*.js && prettier --write src/*.js && prettier --write __tests__/*.js",
+    "lint": "prettier src/**/*.js && prettier src/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,11 +21,14 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "helmet": "^3.13.0",
+    "jest": "^23.6.0",
     "log4js": "^3.0.5",
     "mongoose": "^5.2.17",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.3"
   }
 }

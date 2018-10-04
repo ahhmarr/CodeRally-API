@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "node_modules/.bin/nodemon npm run start",
     "pretest": "npm run lint",
-    "test": "NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest --forceExit",
     "lint-fix": "prettier --write src/**/*.js && prettier --write src/*.js && prettier --write __tests__/*.js",
     "lint": "prettier src/**/*.js && prettier src/*.js"
   },

@@ -12,6 +12,8 @@ const projectSchema = new Schema({
   partners: String,
   description: String,
   status: String
+},{
+  timestamps:true
 });
 
 const Project = mongoose.model("Project", projectSchema);
